@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass,field
 from typing import Any
 
 @dataclass
@@ -6,7 +6,7 @@ class RunRecord:
     # 身份标识
     run_id: str
     case_id: str
-    repeat_idx: str
+    repeat_idx: int
 
     # 可重复性四元祖
     model: str
@@ -23,5 +23,5 @@ class RunRecord:
     error: str | None
     latency_ms: int
     prompt_tokens: int
-    collection_tokens: int
+    completion_tokens: int
     ts: float
